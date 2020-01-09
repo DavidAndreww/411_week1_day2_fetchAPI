@@ -2,10 +2,11 @@ import React from 'react';
 
 const BeerSpecs = ({ abv, first_brewed, food_pairing }) => {
   return (
-    <ul>
-      <li>First Brewed: {first_brewed}</li>
-      <li>ABV: {abv}</li>
-    </ul>
+    <div>
+      <p><b>First Brewed:</b> {first_brewed}</p>
+      <p><b>ABV:</b> {abv}</p>
+      <ul><b>Food Pairing:</b>{food_pairing.map(food => <li key={food}>{`${food}`}</li>)}</ul>
+    </div>
   )
 }
 

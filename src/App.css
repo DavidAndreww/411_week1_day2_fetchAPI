@@ -74,8 +74,8 @@ body h1 {
   padding: 1em;
   text-overflow: clip;
 }
-.card-body ul {
-  list-style: none;
+.card-body ul li {
+  margin-left: 1em;
 }
 .card-actions {
   display: flex;
