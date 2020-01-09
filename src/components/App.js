@@ -3,8 +3,7 @@ import BeerItem from './BeerItem'
 
 class App extends React.Component{
   state = {
-    beers: [],
-    isLiked: []
+    beers: []
   }
 
   fetchData = () => {
@@ -16,10 +15,6 @@ class App extends React.Component{
 
   componentDidMount(){
     this.fetchData()
-  }
-
-  likeThisBeer = () => {
-    console.log('liked')
   }
 
   render () {

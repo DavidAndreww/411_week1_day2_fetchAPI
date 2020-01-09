@@ -1,20 +1,27 @@
 import React from "react";
 import LikeButton from "./LikeButton";
-
+import UnlikeButton from './UnlikeButton'
 
 class BeerItem extends React.Component {
   state = {
-    isLiked: true,
-    class: ''
+    isLiked: false,
+    classText: "beer-card"
   };
 
-  handleLike = () => {
-    console.log('hay')
-  }
+  toggleLike = () => {
+    let isLiked = this.state.isLiked;
+    if(isLiked){
+      this.setState({classText: 'liked-card'})
+    } else {
+      this.setState({classText: 'beer-card'})
+    }
+
+    this.setState({ isLiked: !isLiked });
+  };
 
   render() {
     return (
-      <div className="beer-card">
+      <div className={this.state.classText}>
         <div className="card-title">
           <h1>{this.props.name}</h1>
           <h5>{this.props.tagline}</h5>
@@ -23,8 +30,8 @@ class BeerItem extends React.Component {
           <p>{this.props.desc}</p>
         </div>
         <div className="card-actions">
-        <button>Specs</button>
-        <LikeButton handleClick={this.handleLike}/>
+          <button>Specs</button>
+          {this.state.classText === 'liked-card' ? (<UnlikeButton toggleLike={this.toggleLike} />) : (<LikeButton toggleLike={this.toggleLike} />)}
         </div>
       </div>
     );
@@ -32,7 +39,3 @@ class BeerItem extends React.Component {
 }
 
 export default BeerItem;
-// toggle like true or false
-//if beer is liked, display green checkmark
-// if not liked, displays text
-// {this.state.isLiked ? (<LikedButton />): (<LikeButton />)}
