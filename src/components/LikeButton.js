@@ -1,8 +1,8 @@
 import React from 'react';
 
-const LikeButton = () => {
+const LikeButton = ({ handleClick }) => {
 return (
-  <button className="unliked">Like Me</button>
+  <button onClick={() => handleClick()}>Like Me</button>
 )
 }
 
