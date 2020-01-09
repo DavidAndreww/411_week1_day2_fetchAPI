@@ -74,6 +74,9 @@ body h1 {
   padding: 1em;
   text-overflow: clip;
 }
+.card-body ul {
+  list-style: none;
+}
 .card-actions {
   display: flex;
   justify-content: space-evenly;

@@ -29,6 +29,9 @@ class App extends React.Component{
           tagline={beer.tagline}
           desc={beer.description}
           likeThisBeer={this.likeThisBeer} 
+          abv={beer.abv}
+          food_pairing={beer.food_pairing}
+          first_brewed={beer.first_brewed}
           />
         ))}
         </div>
