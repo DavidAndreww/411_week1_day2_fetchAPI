@@ -1,0 +1,7 @@
+.title{
+  display: flex;
+  align-items: center;
+}
+.title h3 {
+  text-decoration: underline;
+}

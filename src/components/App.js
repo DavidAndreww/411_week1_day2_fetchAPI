@@ -1,8 +1,10 @@
 import React from 'react';
+import BeerItem from './BeerItem'
 
 class App extends React.Component{
   state = {
-    beers: []
+    beers: [],
+    isLiked: []
   }
 
   fetchData = () => {
@@ -16,6 +18,10 @@ class App extends React.Component{
     this.fetchData()
   }
 
+  likeThisBeer = () => {
+    console.log('liked')
+  }
+
   render () {
     return (
       <div>
@@ -23,7 +29,13 @@ class App extends React.Component{
         <p>api about beer!!!</p>
         <ul>
         {this.state.beers.map((beer, index) => (
-          <li key={beer.name}>Name: {beer.name}<br/>Tagling: {beer.tagline}</li>
+          <BeerItem 
+          key={beer.name}
+          name={beer.name}
+          tagline={beer.tagline}
+          desc={beer.description}
+          likeThisBeer={this.likeThisBeer} 
+          />
         ))}
         </ul>
       </div>
@@ -32,3 +44,4 @@ class App extends React.Component{
 }
 
 export default App;
+
