@@ -3,12 +3,26 @@
   margin: 0;
   box-sizing: border-box;
 }
+body {
+  background-image: url(./beer.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+body h1 {
+  color: white;
+}
+.main {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 .beer-card {
   display: grid;
   grid-template-rows: 30% 60% 10%;
   width: 15em;
   height: 18em;
-  margin: 1em;
+  margin: 3em;
   border: 1px solid black;
   border-radius: 15px;
   box-shadow: 0 1px 1px rgba(0,0,0,0.12), 
@@ -22,7 +36,7 @@
   grid-template-rows: 30% 60% 10%;
   width: 15em;
   height: 18em;
-  margin: 1em;
+  margin: 2.5em 3em 3em 3em;
   border: 1px solid black;
   border-radius: 15px;
   box-shadow: 0 1px 1px rgba(7, 238, 57, 0.534), 
@@ -43,7 +57,7 @@
   font-style: italic;
 }
 .card-body{
-  background: white;
+  background: rgb(254, 255, 238);
   font-size: .75em;
   text-align: justify;
   padding: 1em;

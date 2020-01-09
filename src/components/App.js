@@ -20,9 +20,8 @@ class App extends React.Component{
   render () {
     return (
       <div>
-        <h1>Beer</h1>
-        <p>api about beer!!!</p>
-        <ul>
+        <h1>Beer List</h1>
+        <div className="main">
         {this.state.beers.map((beer, index) => (
           <BeerItem 
           key={beer.name}
@@ -32,7 +31,7 @@ class App extends React.Component{
           likeThisBeer={this.likeThisBeer} 
           />
         ))}
-        </ul>
+        </div>
       </div>
     )
   }
