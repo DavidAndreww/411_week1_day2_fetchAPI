@@ -52,15 +52,15 @@ body h1 {
   color: white;
   border-radius: 15px 15px 0px 0px;
 }
+.card-title img{
+  width: 20%;
+}
 .card-title .image-on {
-  position: relative;
+  position: relative; ;
   left: 6.5em;
   top: .5em;
 }
 .card-title .image-off {
-  position: relative;
-  left: 6.5em;
-  top: .5em;
   display: none;
 }
 .card-title h5 {

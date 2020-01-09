@@ -5,6 +5,7 @@ import BeerDesc from "./BeerDesc";
 import BeerSpecs from "./BeerSpecs";
 import SpecsButton from "./SpecsButton";
 import DescButton from "./DescButton";
+import img from '../ribbon.png'
 
 class BeerItem extends React.Component {
   state = {
@@ -33,7 +34,7 @@ class BeerItem extends React.Component {
     return (
       <div className={this.state.classText}>
         <div className="card-title">
-          <img className="image-off" src="../ribbon.png" alt="liked" />
+          <img className="image-off" src={img} alt="liked" />
           <h1>{this.props.name}</h1>
           <h5>{this.props.tagline}</h5>
         </div>
