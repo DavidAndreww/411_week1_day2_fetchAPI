@@ -2,7 +2,7 @@ import React from 'react';
 
 const LikeButton = () => {
 return (
-  <button>Like Me</button>
+  <button className="unliked">Like Me</button>
 )
 }
 

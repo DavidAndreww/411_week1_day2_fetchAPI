@@ -5,3 +5,8 @@
 .title h3 {
   text-decoration: underline;
 }
+.liked {
+  background-color: green;
+  border-color: green;
+  color: white;
+}
