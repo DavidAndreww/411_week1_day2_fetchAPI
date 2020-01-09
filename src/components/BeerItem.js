@@ -5,24 +5,23 @@ import BeerDesc from "./BeerDesc";
 import BeerSpecs from "./BeerSpecs";
 import SpecsButton from "./SpecsButton";
 import DescButton from "./DescButton";
-import img from '../ribbon.png'
+import img from "../ribbon.png";
 
 class BeerItem extends React.Component {
   state = {
     isLiked: false,
-    classText: "beer-card",
+    classText: "image-off",
     displayDesc: true
   };
 
   toggleLike = () => {
     let isLiked = this.state.isLiked;
-    if (isLiked) {
-      this.setState({ classText: "liked-card" });
-    } else {
-      this.setState({ classText: "beer-card" });
-    }
-
     this.setState({ isLiked: !isLiked });
+    if (isLiked) {
+      this.setState({ classText: "image-on" });
+    } else {
+      this.setState({ classText: "image-off" });
+    }
   };
 
   toggleData = () => {
@@ -32,9 +31,9 @@ class BeerItem extends React.Component {
 
   render() {
     return (
-      <div className={this.state.classText}>
+      <div className="beer-card">
         <div className="card-title">
-          <img className="image-off" src={img} alt="liked" />
+          <img className={this.state.classText} src={img} alt="liked" />
           <h1>{this.props.name}</h1>
           <h5>{this.props.tagline}</h5>
         </div>
@@ -50,7 +49,11 @@ class BeerItem extends React.Component {
           )}
         </div>
         <div className="card-actions">
-        {this.state.displayDesc ? (<SpecsButton toggleData={this.toggleData}/>) : (<DescButton toggleData={this.toggleData} />)}
+          {this.state.displayDesc ? (
+            <SpecsButton toggleData={this.toggleData} />
+          ) : (
+            <DescButton toggleData={this.toggleData} />
+          )}
           {this.state.classText === "liked-card" ? (
             <UnlikeButton toggleLike={this.toggleLike} />
           ) : (
