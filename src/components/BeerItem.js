@@ -3,6 +3,8 @@ import LikeButton from "./LikeButton";
 import UnlikeButton from "./UnlikeButton";
 import BeerDesc from "./BeerDesc";
 import BeerSpecs from "./BeerSpecs";
+import SpecsButton from "./SpecsButton";
+import DescButton from "./DescButton";
 
 class BeerItem extends React.Component {
   state = {
@@ -47,7 +49,7 @@ class BeerItem extends React.Component {
           )}
         </div>
         <div className="card-actions">
-          <button onClick={this.toggleData}>Specs</button>
+        {this.state.displayDesc ? (<SpecsButton toggleData={this.toggleData}/>) : (<DescButton toggleData={this.toggleData} />)}
           {this.state.classText === "liked-card" ? (
             <UnlikeButton toggleLike={this.toggleLike} />
           ) : (
