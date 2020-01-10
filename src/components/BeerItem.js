@@ -54,7 +54,7 @@ class BeerItem extends React.Component {
           ) : (
             <DescButton toggleData={this.toggleData} />
           )}
-          {this.state.classText === "liked-card" ? (
+          {this.state.classText === "image-on" ? (
             <UnlikeButton toggleLike={this.toggleLike} />
           ) : (
             <LikeButton toggleLike={this.toggleLike} />
