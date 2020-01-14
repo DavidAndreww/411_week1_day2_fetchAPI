@@ -1,6 +1,3 @@
-// state.isLiked changes on first call to toggleLike (line 20), but effects of class change are not visible on the DOM until called a second time. 
-
-
 import React from "react";
 import LikeButton from "./LikeButton";
 import UnlikeButton from "./UnlikeButton";
