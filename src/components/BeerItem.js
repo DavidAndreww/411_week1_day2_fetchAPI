@@ -13,18 +13,12 @@ import img from "../ribbon.png";
 class BeerItem extends React.Component {
   state = {
     isLiked: false,
-    classText: "image-off",
     displayDesc: true
   };
 
   toggleLike = () => {
     let isLiked = this.state.isLiked;
     this.setState({ isLiked: !isLiked });
-    if (isLiked) {
-      this.setState({ classText: "image-on" });
-    } else {
-      this.setState({ classText: "image-off" });
-    }
   };
 
   toggleData = () => {
@@ -36,7 +30,7 @@ class BeerItem extends React.Component {
     return (
       <div className="beer-card">
         <div className="card-title">
-          <img className={this.state.classText} src={img} alt="liked" />
+          <img className={this.state.isLiked ? ('image-on') : ('image-off')} src={img} alt="liked" />
           <h1>{this.props.name}</h1>
           <h5>{this.props.tagline}</h5>
         </div>
@@ -57,7 +51,7 @@ class BeerItem extends React.Component {
           ) : (
             <DescButton toggleData={this.toggleData} />
           )}
-          {this.state.classText === "image-on" ? (
+          {this.state.isLiked ? (
             <UnlikeButton toggleLike={this.toggleLike} />
           ) : (
             <LikeButton toggleLike={this.toggleLike} />
